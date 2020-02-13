@@ -63,9 +63,9 @@ textarea:hover { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1); }
 textarea:focus { box-shadow: inset 0 0 0 2px #18A0FB; }
 
 select {
-  border: none;
+  border: solid 1px rgba(0, 0, 0, 0.1);
   outline: none;
-  padding: 8px;
+  padding: 4px;
   font: 11px Inter, Roboto, sans-serif;
 }
 select:hover { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1); }
