@@ -1,0 +1,7 @@
+{
+  "name": "figma-to-react-plugin",
+  "id": "805960555724769572",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html"
+}
