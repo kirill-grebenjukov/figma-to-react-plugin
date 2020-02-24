@@ -5,7 +5,7 @@ const SPACE = 40;
 
 const TEXT_STORE_NAME = 'JsonStore';
 
-figma.showUI(__html__, { width: 310, height: 580 });
+figma.showUI(__html__, { width: 310, height: 620 });
 
 const onSelectionChange = () => {
   const {

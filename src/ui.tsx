@@ -17,6 +17,7 @@ const defaultState = {
   extendMode: 'none',
   extendImport: '',
   extendComponent: '',
+  extendProps: '',
   hocImport: '',
   hocCode: '',
 };
@@ -40,10 +41,12 @@ class App extends React.Component {
             mode: extendMode,
             import: extendImport,
             component: extendComponent,
+            props: extendProps,
           } = {
             mode: defaultState.extendMode,
             import: defaultState.extendImport,
             component: defaultState.extendImport,
+            props: defaultState.extendProps,
           },
           hoc: { import: hocImport, code: hocCode } = {
             import: defaultState.hocImport,
@@ -57,6 +60,7 @@ class App extends React.Component {
           extendMode,
           extendImport,
           extendComponent,
+          extendProps,
           hocImport,
           hocCode,
         });
@@ -64,7 +68,14 @@ class App extends React.Component {
     };
   }
 
-  onChange = field => ({ target: { type, checked = false, value } }) => {
+  onChange = field => ({
+    target: { type, checked = false, value: value0 },
+  }) => {
+    let value = value0;
+    if (field === 'componentName' || field === 'extendComponent') {
+      value = value0.replace(' ', '');
+    }
+
     const { state } = this;
     const newState = {
       ...state,
@@ -93,6 +104,7 @@ class App extends React.Component {
       extendMode = 'none',
       extendImport = '',
       extendComponent = '',
+      extendProps = '',
       hocImport = '',
       hocCode = '',
     } = this.state;
@@ -220,6 +232,17 @@ class App extends React.Component {
               disabled={disabled || noExtend}
               value={extendComponent}
               onChange={this.onChange('extendComponent')}
+            />
+          </label>
+        </div>
+        <div className="line">
+          <label>
+            Props:
+            <br />
+            <textarea
+              disabled={disabled || noExtend}
+              value={extendProps}
+              onChange={this.onChange('extendProps')}
             />
           </label>
         </div>
